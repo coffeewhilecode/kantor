@@ -1,0 +1,40 @@
+---
+import H from "@/components/layouts/hero.astro";
+---
+
+<H sectionClass="bg-slate-300">
+  <div slot="overlay" class="absolute bg-black w-full h-full opacity-5"></div>
+  <div slot="primary">
+    <h1
+      class="text-4xl font-semibold tracking-tighter text-gray-900 lg:text-6xl text-balance"
+    >
+      Building your dashboard together,
+      <span class="text-gray-600">wherever, and whenever</span>
+    </h1>
+    <p class="mt-4 text-base font-medium text-gray-500 text-balance">
+      Create your own admin dashboard with ease, built with <a
+        href="https://tailwindcss.com">Tailwind CSS</a
+      >, <a href="https://astro.build">Astro</a>,
+      <a href="https://scaff.dog">Scaffdog</a>, and <a
+        href="https://www.typescriptlang.org/">Typescript</a
+      > in mind.
+    </p>
+  </div>
+  <div
+    slot="secondary"
+    class="flex flex-col items-center gap-2 mx-auto mt-8 md:flex-row"
+  >
+    <a
+      class="inline-flex items-center justify-center w-full h-12 gap-3 px-5 py-3 font-medium text-white duration-200 bg-gray-900 md:w-auto rounded-xl hover:bg-gray-700 focus:ring-2 focus:ring-offset-2 focus:ring-black"
+      aria-label="Primary action"
+    >
+      Get Started
+    </a>
+    <a
+      class="inline-flex items-center justify-center w-full h-12 gap-3 px-5 py-3 font-medium duration-200 bg-gray-100 md:w-auto rounded-xl hover:bg-gray-200 focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+      aria-label="Secondary action"
+    >
+      Secondary button
+    </a>
+  </div>
+</H>

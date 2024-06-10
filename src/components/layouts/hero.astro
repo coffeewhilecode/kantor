@@ -1,0 +1,15 @@
+---
+type Props = {
+  sectionClass?: string;
+  sectionId?: string;
+};
+const { props } = Astro;
+---
+
+<section id={props.sectionId} class={props.sectionClass}>
+  <slot name="overlay" />
+  <div class="relative px-8 py-24 mx-auto md:px-12 lg:px-32 max-w-7xl">
+    <slot name="primary" />
+    <slot name="secondary" />
+  </div>
+</section>
