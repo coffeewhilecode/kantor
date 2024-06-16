@@ -1,0 +1,47 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type NavItemProps = {
+  label: string;
+} & HTMLAttributes<"a">;
+
+type Props = {
+  navItems: NavItemProps[];
+  headerProps?: HTMLAttributes<"header">;
+  logoProps?: HTMLAttributes<"a">;
+  navProps?: HTMLAttributes<"nav">;
+  menuProps?: HTMLAttributes<"ul">;
+};
+const { props } = Astro;
+---
+
+<header
+  {...props.headerProps}
+  class:list={["sticky top-0", props.headerProps?.class]}
+>
+  >
+  <slot />
+  <nav
+    {...props.navProps}
+    class:list={[
+      "flex justify-around items-center px-8 py-4",
+      props.navProps?.class,
+    ]}
+  >
+    <a {...props.logoProps} href={props.logoProps?.href ?? "/"}>
+      <slot name="logo" />
+    </a>
+    <ul
+      {...props.menuProps}
+      class:list={["flex gap-4", props.menuProps?.class]}
+    >
+      {
+        props.navItems.map((item) => (
+          <a href={item.href}>
+            <li>{item.label}</li>
+          </a>
+        ))
+      }
+    </ul>
+  </nav>
+</header>
