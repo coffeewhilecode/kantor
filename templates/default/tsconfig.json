@@ -6,5 +6,5 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["./src", "packages/astro-kantor"]
+  "include": ["./src"]
 }

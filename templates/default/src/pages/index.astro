@@ -3,11 +3,14 @@ import Hero from "./_components/hero.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Header from "@/components/layouts/header.astro";
 import Logo from "@/components/misc/logo.astro";
+import Splash from "./_components/splash.astro";
 ---
 
 <BaseLayout title="Home">
-  <Header navItems={[]}>
-    <Logo slot="logo" />
-    <Hero />
+  <Splash />
+  <Header navItems={[]} headerProps={{ class: "bg-sky-800" }}>
+    <a href="/" slot="logo"><Logo /></a>
   </Header>
+  <Hero />
+  <Splash />
 </BaseLayout>

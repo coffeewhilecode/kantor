@@ -1,0 +1,16 @@
+{
+  "name": "astro-kantor",
+  "version": "0.0.1",
+  "author": {
+    "name": "Muhammad Tsany Qudsi",
+    "email": "tsanyqudsi@gmail.com"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "start": "turbo run start"
+  },
+  "devDependencies": {
+    "typescript": "5.4.5"
+  }
+}

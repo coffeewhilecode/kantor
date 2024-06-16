@@ -8,33 +8,34 @@ type NavItemProps = {
 type Props = {
   navItems: NavItemProps[];
   headerProps?: HTMLAttributes<"header">;
-  logoProps?: HTMLAttributes<"a">;
   navProps?: HTMLAttributes<"nav">;
   menuProps?: HTMLAttributes<"ul">;
 };
+
 const { props } = Astro;
+
+const { class: headerPropClass, ...headerProps } = props.headerProps ?? {};
+const { class: navPropClass, ...navProps } = props.navProps ?? {};
+const { class: menuPropClass, ...menuProps } = props.menuProps ?? {};
 ---
 
-<header
-  {...props.headerProps}
-  class:list={["sticky top-0", props.headerProps?.class]}
->
-  >
+<script>
+  const getWindowScrollPosition = () => ({
+    x: window.scrollX,
+    y: window.scrollY,
+  });
+
+  getWindowScrollPosition();
+</script>
+
+<header {...headerProps} class:list={["sticky top-0", headerPropClass]}>
   <slot />
   <nav
-    {...props.navProps}
-    class:list={[
-      "flex justify-around items-center px-8 py-4",
-      props.navProps?.class,
-    ]}
+    {...navProps}
+    class:list={["flex justify-around items-center px-8 py-4", navPropClass]}
   >
-    <a {...props.logoProps} href={props.logoProps?.href ?? "/"}>
-      <slot name="logo" />
-    </a>
-    <ul
-      {...props.menuProps}
-      class:list={["flex gap-4", props.menuProps?.class]}
-    >
+    <slot name="logo" />
+    <ul {...menuProps} class:list={["flex gap-4", menuPropClass]}>
       {
         props.navItems.map((item) => (
           <a href={item.href}>

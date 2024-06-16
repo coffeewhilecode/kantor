@@ -2,6 +2,7 @@
   "name": "kantor-monorepo",
   "version": "0.0.1",
   "type": "module",
+  "packageManager": "npm@10.7.0",
   "license": "MIT",
   "author": {
     "name": "Muhammad Tsany Qudsi",
@@ -15,6 +16,11 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
-    "start": "turbo run start"
+    "start": "turbo run start",
+    "d:tpl": "turbo run dev --parallel --filter @kantor-template/*"
+  },
+  "devDependencies": {
+    "tsup": "^8.1.0",
+    "typescript": "^5.4.5"
   }
 }
