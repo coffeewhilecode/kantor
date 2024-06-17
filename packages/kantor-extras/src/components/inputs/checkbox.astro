@@ -1,0 +1,28 @@
+---
+import * as _ from "change-case";
+
+type Props = {
+  name: string;
+  class?: string;
+  label?: string;
+};
+
+const { props } = Astro;
+
+const id = _.kebabCase(props.name);
+---
+
+<div class={props.class}>
+  <label for={id} class="flex gap-4">
+    <input
+      type="checkbox"
+      id={id}
+      name={props.name}
+      class="size-5 rounded-md border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:focus:ring-offset-gray-900"
+    />
+
+    <span class="text-sm text-gray-700 dark:text-gray-200">
+      {props.label ?? <slot />}
+    </span>
+  </label>
+</div>

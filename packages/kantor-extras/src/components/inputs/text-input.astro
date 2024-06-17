@@ -1,0 +1,53 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import * as _ from "change-case";
+
+type Props = {
+  name: string;
+  type?: Omit<
+    HTMLAttributes<"input">["type"],
+    | "checkbox"
+    | "radio"
+    | "range"
+    | "reset"
+    | "submit"
+    | "image"
+    | "file"
+    | "button"
+    | "color"
+    | "date"
+    | "datetime-local"
+    | "month"
+    | "number"
+    | "search"
+    | "time"
+    | "week"
+  >;
+  class?: string;
+  placeholder?: string;
+  label?: string;
+};
+
+const { props } = Astro;
+
+const id = _.kebabCase(props.name);
+const label = _.capitalCase(props.name);
+---
+
+<div id={`${id}-wrapper`} class={props.class}>
+  <label
+    id={`${id}-label`}
+    for={id}
+    class="block text-sm font-medium text-gray-700 dark:text-gray-200"
+  >
+    {props.label ?? label}
+  </label>
+
+  <input
+    type={(props.type as HTMLAttributes<"input">["type"]) ?? "text"}
+    id={`${id}-input`}
+    name={props.name}
+    placeholder={props.placeholder}
+    class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
+  />
+</div>

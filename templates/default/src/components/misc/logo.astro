@@ -1,25 +1,22 @@
 ---
+type Props = {
+  class?: string;
+};
 
+const { props } = Astro;
 ---
 
-<div class="w-24 h-24">
+<div class:list={["fill-orange-600 w-12 h-12", props.class]}>
+  <!--?xml version="1.0" ?--><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
   <svg
-    viewBox="0 0 24 24"
-    id="kantor-logo"
-    fill="none"
+    viewBox="0 0 32 32"
+    data-name="Layer 2"
+    id="Layer_2"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <path
-      d="M2 0H7C8.10457 0 9 0.89543 9 2V7C9 8.10457 8.10457 9 7 9H2C0.89543 9 0 8.10457 0 7V2C0 0.89543 0.89543 0 2 0Z"
-      fill="#FF8400"></path>
-    <path
-      d="M2 11H7C8.10457 11 9 11.8954 9 13V22C9 23.1046 8.10457 24 7 24H2C0.89543 24 0 23.1046 0 22V13C0 11.8954 0.89543 11 2 11Z"
-      fill="#F28FAD"></path>
-    <path
-      d="M13 0H22C23.1046 0 24 0.89543 24 2V13C24 14.1046 23.1046 15 22 15H13C11.8954 15 11 14.1046 11 13V2C11 0.89543 11.8954 0 13 0Z"
-      fill="#3F0071"></path>
-    <path
-      d="M13 17H22C23.1046 17 24 17.8954 24 19V22C24 23.1046 23.1046 24 22 24H13C11.8954 24 11 23.1046 11 22V19C11 17.8954 11.8954 17 13 17Z"
-      fill="#FB2576"></path>
+    <title>Kantor Logo</title>
+    <path d="M5,5V27H27V5Zm6.29,20V17h9v8ZM25,25H22.33V15h-13V25H7V7H25Z"
+    ></path>
+    <rect class="cls-1" height="2" width="12.95" x="9.34" y="10.29"></rect>
   </svg>
 </div>
