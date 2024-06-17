@@ -5,12 +5,28 @@
     "name": "Muhammad Tsany Qudsi",
     "email": "tsanyqudsi@gmail.com"
   },
+  "files": [
+    "dist",
+    "package.json"
+  ],
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev --parallel",
-    "start": "turbo run start"
+    "build": "tsup ./src"
+  },
+  "dependencies": {
+    "lilconfig": "^3.1.2"
   },
   "devDependencies": {
-    "typescript": "5.4.5"
+    "typescript": "5.4.5",
+    "tsup": "^8.1.0"
   }
 }

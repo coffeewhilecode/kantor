@@ -1,20 +1,23 @@
 {
   "name": "kantor-extras",
   "version": "0.0.1",
-    "description": "Kantor Extras - Astro Components and Layouts for Kantor",
-    "homepage": "https://github.com/coffeewhilecode/kantor#readme",
+  "description": "Kantor Extras - Astro Components and Layouts for Kantor",
+  "homepage": "https://github.com/coffeewhilecode/kantor#readme",
   "type": "module",
   "exports": {
     ".": "./index.ts",
-    "./components": "./src/components",
-    "./layouts": "./src/layouts"
+    "./components": "./src/components/index.ts",
+    "./layouts": "./src/layouts/index.ts"
   },
   "files": [
     "src",
     "index.ts"
   ],
   "keywords": [
-    "astro", "withastro", "astro-component", "kantor"
+    "astro",
+    "withastro",
+    "astro-component",
+    "kantor"
   ],
   "scripts": {},
   "devDependencies": {

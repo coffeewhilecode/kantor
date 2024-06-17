@@ -20,11 +20,12 @@ const { class: menuPropClass, ...menuProps } = props.menuProps ?? {};
 ---
 
 <script>
-  const getWindowScrollPosition = () => ({
-    x: window.scrollX,
-    y: window.scrollY,
-  });
-
+  function getWindowScrollPosition() {
+    return {
+      x: window.scrollX,
+      y: window.scrollY,
+    };
+  }
   getWindowScrollPosition();
 </script>
 
