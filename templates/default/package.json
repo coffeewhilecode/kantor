@@ -13,11 +13,9 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.7.0",
-    "@astrojs/db": "^0.11.5",
     "@astrojs/mdx": "^3.1.0",
     "@astrojs/partytown": "^2.1.1",
     "@astrojs/tailwind": "^5.1.0",
-    "@astrojs/vercel": "^7.7.0",
     "astro": "^4.10.2",
     "astro-color-scheme": "^1.1.5",
     "change-case": "^5.4.4",
