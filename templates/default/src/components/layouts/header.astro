@@ -19,17 +19,11 @@ const { class: navPropClass, ...navProps } = props.navProps ?? {};
 const { class: menuPropClass, ...menuProps } = props.menuProps ?? {};
 ---
 
-<script>
-  function getWindowScrollPosition() {
-    return {
-      x: window.scrollX,
-      y: window.scrollY,
-    };
-  }
-  getWindowScrollPosition();
-</script>
-
-<header {...headerProps} class:list={["sticky top-0", headerPropClass]}>
+<header
+  id="header"
+  {...headerProps}
+  class:list={["sticky top-0", headerPropClass]}
+>
   <slot />
   <nav
     {...navProps}
@@ -47,3 +41,6 @@ const { class: menuPropClass, ...menuProps } = props.menuProps ?? {};
     </ul>
   </nav>
 </header>
+<script is:inline>
+  console.log("sdsada");
+</script>

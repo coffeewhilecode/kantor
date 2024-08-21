@@ -6,9 +6,9 @@ type Props = {
 const { props } = Astro;
 ---
 
-<section id={props.sectionId} class:list={["relative", props.sectionClass]}>
+<section id={props.sectionId} class:list={[props.sectionClass]}>
   <slot name="overlay" />
-  <div class="relative px-8 py-24 mx-auto md:px-12 lg:px-32 max-w-7xl">
+  <div class="px-8 py-24 mx-auto md:px-12 lg:px-32 max-w-7xl">
     <slot name="primary" />
     <slot name="secondary" />
   </div>
