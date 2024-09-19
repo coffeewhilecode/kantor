@@ -1,0 +1,45 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type NavItemProps = {
+  label: string;
+} & HTMLAttributes<"a">;
+
+type Props = {
+  navItems: NavItemProps[];
+  headerProps?: HTMLAttributes<"header">;
+  navProps?: HTMLAttributes<"nav">;
+  menuProps?: HTMLAttributes<"ul">;
+};
+
+const { props } = Astro;
+
+const { class: headerPropClass, ...headerProps } = props.headerProps ?? {};
+const { class: navPropClass, ...navProps } = props.navProps ?? {};
+const { class: menuPropClass, ...menuProps } = props.menuProps ?? {};
+---
+
+<script is:inline src="/scripts/header.ts"></script>
+
+<header
+  id="header"
+  {...headerProps}
+  class:list={["absolute bottom-0 w-full", headerPropClass]}
+>
+  <slot />
+  <nav
+    {...navProps}
+    class:list={["flex justify-around items-center px-8 py-4", navPropClass]}
+  >
+    <slot name="logo" />
+    <ul {...menuProps} class:list={["flex gap-4", menuPropClass]}>
+      {
+        props.navItems.map((item) => (
+          <a href={item.href}>
+            <li>{item.label}</li>
+          </a>
+        ))
+      }
+    </ul>
+  </nav>
+</header>

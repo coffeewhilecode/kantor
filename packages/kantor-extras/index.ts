@@ -4,7 +4,7 @@
 // Components
 export { default as TextInput } from "./src/components/inputs/text-input.astro";
 export { default as Checkbox } from "./src/components/inputs/checkbox.astro";
-export { default as Header } from "./src/components/layouts/header.astro";
+export { default as Header } from "./src/blocks/header.astro";
 
 // Layouts
 export { default as BaseLayout } from "./src/layouts/BaseLayout.astro";

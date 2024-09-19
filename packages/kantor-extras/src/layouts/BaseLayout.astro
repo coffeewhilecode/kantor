@@ -1,5 +1,5 @@
 ---
-import Head from "./blocks/head.astro";
+import Head from "@/blocks/head.astro";
 
 type Props = {
   title: string;
@@ -10,10 +10,9 @@ const { props } = Astro;
 
 <html lang={import.meta.env.PUBLIC_SITE_LANG ?? "en"}>
   <Head title={props.title}>
-    <body>
-      <slot />
-    </body>
+    <slot name="head" />
   </Head>
-
-  Astro.props.[]
+  <body>
+    <slot />
+  </body>
 </html>

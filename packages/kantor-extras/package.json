@@ -20,14 +20,7 @@
     "kantor"
   ],
   "scripts": {},
-  "devDependencies": {
-    "astro": "^4.10.2"
-  },
   "peerDependencies": {
-    "astro": "^4.0.0"
-  },
-  "dependencies": {
-    "@astrojs/check": "^0.7.0",
-    "typescript": "^5.4.5"
+    "astro": "^4.15.7"
   }
 }
