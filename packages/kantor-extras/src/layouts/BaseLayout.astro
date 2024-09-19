@@ -1,15 +1,17 @@
 ---
 import Head from "@/blocks/head.astro";
+import type { Props as HeadProps } from "@/blocks/head.astro";
 
 type Props = {
   title: string;
-};
+} & HeadProps;
 
 const { props } = Astro;
 ---
 
 <html lang={import.meta.env.PUBLIC_SITE_LANG ?? "en"}>
-  <Head title={props.title}>
+  <Head faviconPath={props.faviconPath}>
+    <title>{props.title}</title>
     <slot name="head" />
   </Head>
   <body>

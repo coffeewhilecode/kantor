@@ -1,6 +1,6 @@
 ---
-type Props = {
-  title: string;
+export type Props = {
+  faviconPath: string | undefined;
 };
 
 const { props } = Astro;
@@ -10,7 +10,10 @@ const { props } = Astro;
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width" />
   <meta name="generator" content={Astro.generator} />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href={props.faviconPath ?? "/favicon.svg"}
+  />
   <slot />
-  <title>{props.title}</title>
 </head>
